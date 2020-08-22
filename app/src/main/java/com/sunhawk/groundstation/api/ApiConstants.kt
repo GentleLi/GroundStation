@@ -1,4 +1,4 @@
-package com.sunhawk.myapplication.api
+package com.sunhawk.groundstation.api
 
 class ApiConstants {
 

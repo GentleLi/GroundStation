@@ -1,8 +1,9 @@
-package com.sunhawk.myapplication
+package com.sunhawk.groundstation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.sunhawk.myapplication.api.ApiTransformer
+import com.sunhawk.groundstation.api.ApiTransformer
+import com.sunhawk.groundstation.observer.MainObserver
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
@@ -11,22 +12,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Example of a call to a native method
-        sample_text.text = stringFromJNI()
         btn_launch.setOnClickListener {
             onTestLaunch();
         }
         btn_block.setOnClickListener {
             onTestBlocking()
         }
+
+        lifecycle.addObserver(MainObserver())
     }
 
     private fun onTestBlocking() {
         CoroutineScope(Dispatchers.IO).launch { // 在后台启动一个新的协程并继续
             val userProfile = ApiTransformer.getUserProfile("GentleLi")
             print(userProfile.bio)
+            runOnUiThread({
+                val text = userProfile.login + "\n" + userProfile.bio
+                tv_response.text = text
+            })
         }
-        println("Hello,")
     }
 
 

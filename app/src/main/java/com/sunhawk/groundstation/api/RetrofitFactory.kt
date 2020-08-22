@@ -1,4 +1,4 @@
-package com.sunhawk.myapplication.api
+package com.sunhawk.groundstation.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

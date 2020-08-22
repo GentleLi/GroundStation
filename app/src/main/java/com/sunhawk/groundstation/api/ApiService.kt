@@ -1,6 +1,6 @@
-package com.sunhawk.myapplication.api
+package com.sunhawk.groundstation.api
 
-import com.sunhawk.myapplication.model.UserProfile
+import com.sunhawk.groundstation.model.UserProfile
 import retrofit2.http.GET
 import retrofit2.http.Path
 

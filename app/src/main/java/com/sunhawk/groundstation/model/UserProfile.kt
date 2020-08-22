@@ -1,4 +1,4 @@
-package com.sunhawk.myapplication.model
+package com.sunhawk.groundstation.model
 
 
 class UserProfile {

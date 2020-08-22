@@ -1,6 +1,4 @@
-package com.sunhawk.myapplication.model
-
-import android.os.Parcelable
+package com.sunhawk.groundstation.model
 
 class Repo {
 
