@@ -2,12 +2,19 @@ package com.sunhawk.groundstation.observer
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
 
 class MainObserver : LifecycleObserver {
 
     companion object {
         val TAG = "MainObserver"
+    }
+
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
+    fun onAny(source: LifecycleOwner, event: Lifecycle.Event) {
+        println("event : " + event.name)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)

@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         btn_block.setOnClickListener {
             onTestBlocking()
         }
-
         lifecycle.addObserver(MainObserver())
     }
 
