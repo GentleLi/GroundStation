@@ -11,7 +11,6 @@ class MainObserver : LifecycleObserver {
         val TAG = "MainObserver"
     }
 
-
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     fun onAny(source: LifecycleOwner, event: Lifecycle.Event) {
         println("event : " + event.name)

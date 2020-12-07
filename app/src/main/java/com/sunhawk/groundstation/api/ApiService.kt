@@ -10,5 +10,4 @@ interface ApiService {
     @GET("users/{user}")
     suspend fun getProfile(@Path("user") user: String): UserProfile
 
-
 }

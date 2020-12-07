@@ -1,5 +1,6 @@
 package com.sunhawk.groundstation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sunhawk.groundstation.api.ApiTransformer
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         btn_block.setOnClickListener {
             onTestBlocking()
         }
+        btn_login_activity.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
         lifecycle.addObserver(MainObserver())
     }
 
@@ -25,13 +29,12 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch { // 在后台启动一个新的协程并继续
             val userProfile = ApiTransformer.getUserProfile("GentleLi")
             print(userProfile.bio)
-            runOnUiThread({
+            runOnUiThread {
                 val text = userProfile.login + "\n" + userProfile.bio
                 tv_response.text = text
-            })
+            }
         }
     }
-
 
     private fun onTestLaunch() {
         GlobalScope.launch {
