@@ -4,6 +4,4 @@ import androidx.lifecycle.LifecycleObserver
 
 class LoginObserver : LifecycleObserver {
 
-    
-
 }

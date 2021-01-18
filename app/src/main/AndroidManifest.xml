@@ -10,9 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.sunhawk.groundstation.MainActivity"
-            android:screenOrientation="landscape">
+        <activity android:name="com.sunhawk.groundstation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +18,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="landscape" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
