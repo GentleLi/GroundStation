@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
         lifecycle.addObserver(MainObserver())
+
+
     }
 
     private fun onTestBlocking() {
